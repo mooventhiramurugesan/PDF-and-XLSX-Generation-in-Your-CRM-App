@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Customer Data</title>
+        <style>
+            /* Header styling */
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #28a745; /* Green background */
+                color: white; /* White text */
+                padding: 10px;
+            }
+
+            .logo {
+                height: 80px;
+                margin-right: 10px;
+            }
+
+            h2 {
+                margin-right: 10px;
+                font-size: 2rem;
+            }
+
+            /* Table styling */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+                font-size: 1.1rem;
+            }
+
+            /* Header row background */
+            th {
+                background-color: #dc3545; /* Red background */
+                color: white;
+            }
+
+            /* Odd rows with green background */
+            tr:nth-child(odd) {
+                background-color: #28a745; /* Green background for odd rows */
+                color: white;
+            }
+
+            /* Even rows with red background */
+            tr:nth-child(even) {
+                background-color: #dc3545; /* Red background for even rows */
+                color: white;
+            }
+
+            /* Row hover effect */
+            tr:hover {
+                background-color: #ff5733; /* Lighter red on hover */
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <!-- Uncomment and provide logo URL if needed -->
+            <!-- <img src="/resources/images/crm-logo.png" alt="Logo" class="logo"/> -->
+            <h2>Customer Details</h2>
+            <!-- Uncomment and provide logo URL if needed -->
+            <!-- <img src="/resources/images/crm-logo.png" alt="Logo" class="logo"/> -->
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Company Name</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="customer : ${customers}">
+                        <td th:text="${customer.firstName}"></td>
+                        <td th:text="${customer.lastName}"></td>
+                        <td th:text="${customer.companyName}"></td>
+                        <td th:text="${customer.address}"></td>
+                        <td th:text="${customer.phoneNumber}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

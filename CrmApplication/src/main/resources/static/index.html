@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM - Customers</title>
+
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin: 15px;
+            font-size: 1.5rem;
+            padding: 15px 25px;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); 
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Customers Details</h1>
+        <button class="btn btn-primary btn-lg" onclick="redirectAndAddCustomers()">Add Customer</button>
+        <button class="btn btn-primary btn-lg" onclick="redirectAndGetAllCustomers()">Get All Customers</button>
+    </div>
+
+    <script>
+        function redirectAndAddCustomers() {
+            window.location.href = '/api/add-customer-frontend';
+        }
+
+        function redirectAndGetAllCustomers() {
+            window.location.href = '/api/customer-list';
+        }
+    </script>
+
+</body>
+</html>
